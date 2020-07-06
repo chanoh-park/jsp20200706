@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,15 +16,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="viewParameter2.jsp" method="post">
-이름 : <input type="text" name="name"/><br />
-주소 : <input type="text" name="address" /><br />
-좋아하는 동물 : 
-	<input type="checkbox" name="pet" value="dog" /> 강아지
-	<input type="checkbox" name="pet" value="cat" /> 고양이
-	<input type="checkbox" name="pet" value="pig" /> 돼지
-<br />
-<input type="submit" value="전송" />
-</form>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1><%= request.getParameter("text") %> 단 </h1>
+			<ul class="list-group list-group-flush">
+<%
+					int m = 0;
+					String gugudan = request.getParameter("text");
+					for(int i = 1; i <= 9; i++) {
+						m = Integer.parseInt(gugudan) * i;
+%> 	
+						<li class="list-group-item">
+						<%= gugudan %> 
+						<i class="fas fa-times"></i>
+						<%= i %>
+						<i class="fas fa-equals"></i>
+						<%= m %> <br>
+						</li>
+<%
+					}
+%>
+		</ul>
+		</div>
+	</div>
+</div>
+
 </body>
 </html>
