@@ -21,4 +21,13 @@
   	<param-name>debugLevel</param-name>
   	<param-value>5</param-value>
   </context-param>
+  
+  <jsp-config>
+  	<jsp-property-group>
+  		<url-pattern>*.jsp</url-pattern>
+  		<include-coda>
+  			/chap07/includeDirectiveEx6DD.jsp
+  		</include-coda>
+  	</jsp-property-group>
+  </jsp-config>
 </web-app>
