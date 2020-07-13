@@ -21,4 +21,11 @@
   	<param-name>debugLevel</param-name>
   	<param-value>5</param-value>
   </context-param>
+  
+  <!-- 60분동안 session에 요청이 없으면 값이 사라진다 -->
+  <!-- 
+  <session-config>
+  	<session-timeout>60</session-timeout>
+  </session-config>
+  -->
 </web-app>
