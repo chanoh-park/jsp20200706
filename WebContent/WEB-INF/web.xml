@@ -11,21 +11,24 @@
   </welcome-file-list>
   
   <context-param>
-  	<description>로깅 여부</description>
-  	<param-name>logEnabled</param-name>
-  	<param-value>true</param-value>
+    <description>로깅 여부</description>
+    <param-name>logEnabled</param-name>
+    <param-value>true</param-value>
   </context-param>
   
   <context-param>
-  	<description>디버깅 레벨</description>
-  	<param-name>debugLevel</param-name>
-  	<param-value>5</param-value>
+    <description>디버깅 레벨</description>
+    <param-name>debugLevel</param-name>
+    <param-value>5</param-value>
   </context-param>
   
-  <!-- 60분동안 session에 요청이 없으면 값이 사라진다 -->
-  <!-- 
-  <session-config>
-  	<session-timeout>60</session-timeout>
-  </session-config>
-  -->
+  <servlet>
+  	<servlet-name>myservlet</servlet-name>
+  	<servlet-class>chap12.MyServlet</servlet-class> <!-- Servlet 경로 명시 -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>myservlet</servlet-name>
+  	<url-pattern>/myservlet</url-pattern> 			<!-- 사용자가 어디로 요청을 받을지 명시 -->
+  </servlet-mapping>
 </web-app>
